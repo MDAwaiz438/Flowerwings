@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Brand Palette ─── */
+  --color-pink: #FF83A8;
+  --color-pink-deep: #E8549E;
+  --color-pink-blush: #FFD6E7;
+  --color-pink-petal: #FFF0F7;
+
+  --color-teal: #52C5C2;
+  --color-teal-deep: #3DA8A5;
+  --color-teal-light: #E8F8F7;
+
+  --color-ivory: #FDFBF9;
+  --color-cream: #F7F4F0;
+  --color-ink: #1A1A1A;
+  --color-charcoal: #2D2D2D;
+  --color-slate: #6B6B6B;
+  --color-mist: #9A9A9A;
+  --color-line: #E8E4E0;
+  --color-warm-white: #FAF8F6;
+
+  /* ─── Typography ─── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+
+  --text-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --text-hero--line-height: 1.05;
+  --text-hero--letter-spacing: -0.03em;
+
+  --text-h1: clamp(2rem, 4vw, 3.5rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.02em;
+
+  --text-h2: clamp(1.5rem, 3vw, 2.5rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.01em;
+
+  --text-h3: clamp(1.125rem, 2vw, 1.5rem);
+  --text-h3--line-height: 1.3;
+
+  --text-body: 15px;
+  --text-body--line-height: 1.7;
+
+  --text-small: 13px;
+  --text-small--line-height: 1.6;
+
+  --text-micro: 11px;
+  --text-micro--line-height: 1.5;
+  --text-micro--letter-spacing: 0.12em;
+
+  /* ─── Radii ─── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* ─── Shadows ─── */
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.1);
+  --shadow-hero: 0 32px 80px rgba(0, 0, 0, 0.12);
+  --shadow-modal: 0 24px 64px rgba(0, 0, 0, 0.18);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    background: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background: var(--color-pink-blush);
+    color: var(--color-ink);
+  }
+
+  input, select, textarea {
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+/* Smooth scroll for those who want it */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
