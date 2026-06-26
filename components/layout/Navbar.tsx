@@ -65,16 +65,18 @@ export function Navbar() {
         <span className="opacity-80">Same-day delivery available</span>
       </div>
 
-      {/* ─── Main Header (Edge-to-Edge Glass & Hide on Scroll) ─── */}
+      {/* ─── Main Header (Edge-to-Edge Glass) ─── */}
       <header className={cn(
         "fixed inset-x-0 z-[100] transition-all duration-500 ease-in-out pointer-events-none",
-        isAtTop ? "top-[37px]" : "top-0",
-        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        isAtTop ? "top-[37px]" : "top-0"
       )}>
         <div className="pointer-events-auto bg-white/70 backdrop-blur-3xl shadow-sm w-full border-b border-white/50 flex flex-col overflow-hidden transition-all">
           
           {/* Top Row */}
-          <div className="flex items-center justify-between px-6 lg:px-12 py-3 lg:py-4 border-b border-white/40">
+          <div className={cn(
+            "flex items-center justify-between px-6 lg:px-12 border-b border-white/40 transition-all duration-500 overflow-hidden",
+            isVisible ? "max-h-[100px] opacity-100 py-3 lg:py-4" : "max-h-0 opacity-0 py-0 border-transparent"
+          )}>
             
             {/* Mobile Menu Button */}
             <button
