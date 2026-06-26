@@ -73,11 +73,11 @@ export function Hero() {
   };
 
   return (
-    <section className="relative w-full h-[calc(100svh-38px)] max-h-[900px] overflow-hidden bg-ivory flex flex-col pb-8">
-      <div className="flex-1 grid lg:grid-cols-2 h-full relative">
+    <section className="relative w-full min-h-[calc(100svh-38px)] lg:h-[calc(100svh-38px)] lg:max-h-[900px] lg:overflow-hidden bg-ivory flex flex-col pb-8">
+      <div className="flex-1 grid lg:grid-cols-2 h-auto lg:h-full relative">
         
         {/* Left Side: Text Content */}
-        <div className="flex flex-col justify-center px-8 md:px-12 lg:px-24 pt-[140px] relative z-10 bg-ivory order-2 lg:order-1 h-full overflow-hidden">
+        <div className="flex flex-col justify-center px-8 md:px-12 lg:px-24 pt-8 lg:pt-[140px] pb-24 lg:pb-16 relative z-10 bg-ivory order-2 lg:order-1 h-auto lg:h-full overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={`text-${slide.id}`}
@@ -133,7 +133,7 @@ export function Hero() {
         </div>
 
         {/* Right Side: Image */}
-        <div className="relative h-[40vh] lg:h-full w-full order-1 lg:order-2 overflow-hidden">
+        <div className="relative h-[45vh] min-h-[350px] lg:h-full w-full order-1 lg:order-2 overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div 
               key={`img-${slide.id}`}
@@ -141,7 +141,7 @@ export function Hero() {
               initial="hidden"
               animate="show"
               exit="exit"
-              className="absolute inset-x-0 bottom-0 top-[180px]"
+              className="absolute inset-x-0 bottom-0 top-[90px] lg:top-[180px]"
             >
               <Image 
                 src={slide.image} 
